@@ -1,54 +1,65 @@
-# 📈 Bluestock MF Capstone
+# 📊 Bluestock Mutual Fund Analytics Dashboard
 
-A Data Engineering and Analytics project built using Python, Pandas, SQLite, SQL, and Jupyter Notebook to analyze Mutual Fund datasets and generate investment insights.
+A professional Mutual Fund Analytics Dashboard built using **Python, Streamlit, SQLite, Pandas, Plotly, and SQL**.
+
+The dashboard provides interactive visualizations and insights into mutual fund performance, category-wise analysis, market trends, and investment recommendations.
 
 ---
 
-# 📌 Project Overview
+# 🚀 Project Overview
 
-This project processes multiple mutual fund datasets, stores them in SQLite, performs exploratory data analysis, computes performance metrics, and recommends top-performing mutual funds based on risk and return.
+This project was developed as part of the **Bluestock Fintech Capstone Internship**.
+
+It loads mutual fund data from a SQLite database, performs analytical queries using SQL and Pandas, and presents the results through an interactive Streamlit dashboard.
+
+The application helps investors understand fund performance, compare categories, identify market trends, and explore recommended investment opportunities.
 
 ---
 
 # 🛠 Tech Stack
 
 - Python
-- Pandas
+- Streamlit
 - SQLite
 - SQL
-- Matplotlib
+- Pandas
+- Plotly
 - Jupyter Notebook
+- VS Code
 - Git & GitHub
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 bluestock_mf_capstone/
 │
+├── dashboard/
+│   ├── app.py
+│   ├── utils.py
+│   ├── assets/
+│   │     └── style.css
+│   │
+│   └── pages/
+│         ├── 1_Overview.py
+│         ├── 2_Performance.py
+│         ├── 3_Market.py
+│         └── 4_Recommendations.py
+│
 ├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── db/
-│       └── bluestock_mf.db
+│     └── db/
+│          └── bluestock_mf.db
 │
 ├── notebooks/
-│   ├── 01_data_ingestion.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   ├── 03_eda_analysis.ipynb
-│   ├── 04_performance_analytics.ipynb
-│   └── 05_advanced_analytics.ipynb
-│
-├── scripts/
-│   ├── etl_pipeline.py
-│   ├── live_nav_fetch.py
-│   ├── compute_metrics.py
-│   └── recommender.py
+│     ├── 01_data_ingestion.ipynb
+│     ├── 02_data_cleaning.ipynb
+│     ├── 03_eda_analysis.ipynb
+│     ├── 04_performance_analytics.ipynb
+│     └── 05_advanced_analytics.ipynb
 │
 ├── sql/
-│   ├── schema.sql
-│   └── queries.sql
+│     └── queries.sql
 │
 ├── reports/
 │
@@ -59,106 +70,170 @@ bluestock_mf_capstone/
 
 ---
 
-# 📊 Dataset
+# 📈 Dashboard Features
 
-The project uses **10 Mutual Fund datasets**
+## 📋 Dashboard Overview
 
-- Fund Master
-- NAV History
-- AUM by Fund House
-- Monthly SIP Inflows
-- Category Inflows
-- Industry Folio Count
-- Scheme Performance
-- Investor Transactions
-- Portfolio Holdings
-- Benchmark Indices
+- Executive Summary
+- Total Mutual Funds
+- Fund Houses
+- Categories
+- Average Returns
+- Highest Performing Fund
 
 ---
 
-# 🚀 Features
+## 📈 Performance Analytics
 
-✔ Data Ingestion
-
-✔ Data Cleaning
-
-✔ SQLite Database Creation
-
-✔ SQL Analysis
-
-✔ Exploratory Data Analysis (EDA)
-
-✔ Performance Score Calculation
-
-✔ Mutual Fund Recommendation Engine
-
-✔ Portfolio Analytics
-
-✔ Investment Transaction Analysis
+- Return Comparison
+- Top Performing Funds
+- Risk vs Return Analysis
+- Performance Distribution
+- Category Comparison
 
 ---
 
-# 📈 Performance Score Formula
+## 📊 Market Analysis
 
-Performance Score is calculated using:
+- Market Trends
+- Category-wise Distribution
+- Investment Insights
+- Interactive Charts
 
+---
+
+## ⭐ Fund Recommendations
+
+- Best Performing Funds
+- Highest Return Funds
+- Risk-adjusted Recommendations
+- Interactive Recommendation Table
+
+---
+
+# 📊 Data Processing Workflow
+
+1. Data Collection
+2. Data Cleaning
+3. Data Validation
+4. SQLite Database Creation
+5. SQL Queries
+6. Exploratory Data Analysis
+7. Performance Analytics
+8. Dashboard Visualization
+
+---
+
+# 📷 Dashboard Pages
+
+The Streamlit application contains four interactive pages:
+
+- 📊 Overview
+- 📈 Performance
+- 📉 Market
+- ⭐ Recommendations
+
+---
+
+# 💻 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/bluestock_mf_capstone.git
 ```
-0.35 × 5-Year Return
-+0.25 × 3-Year Return
-+15 × Sharpe Ratio
-+10 × Sortino Ratio
--0.20 × Maximum Drawdown
--5 × Expense Ratio
-+5 × Morningstar Rating
+
+Go inside the project
+
+```bash
+cd bluestock_mf_capstone
 ```
-
----
-
-# ▶️ How to Run
 
 Install dependencies
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-Run Performance Metrics
+---
+
+# ▶️ Run the Dashboard
+
+Navigate to the dashboard folder
+
+```bash
+cd dashboard
+```
+
+Run Streamlit
+
+```bash
+python -m streamlit run app.py
+```
+
+The dashboard will open in your browser at
 
 ```
-python scripts/compute_metrics.py
-```
-
-Run Recommendation Engine
-
-```
-python scripts/recommender.py
+http://localhost:8501
 ```
 
 ---
 
-# 📷 Outputs
+# 📊 Technologies Used
 
-The project generates
-
-- Performance Rankings
-- Category Analysis
-- Portfolio Holdings Analysis
-- Transaction Analysis
-- Mutual Fund Recommendations
+| Technology | Purpose |
+|------------|---------|
+| Python | Programming Language |
+| Streamlit | Dashboard Development |
+| SQLite | Database |
+| SQL | Data Queries |
+| Pandas | Data Analysis |
+| Plotly | Interactive Charts |
+| Jupyter Notebook | Data Exploration |
 
 ---
 
-# 📌 Future Improvements
+# 📌 Key Highlights
 
-- Interactive Dashboard
-- Live NAV API Integration
-- Machine Learning Based Recommendation
-- Portfolio Risk Prediction
+✅ Interactive Streamlit Dashboard
+
+✅ Responsive Dark UI
+
+✅ SQLite Database Integration
+
+✅ SQL Based Analytics
+
+✅ Interactive Plotly Charts
+
+✅ Mutual Fund Performance Analysis
+
+✅ Market Insights
+
+✅ Investment Recommendations
+
+---
+
+# 🔮 Future Improvements
+
+- Live Mutual Fund API Integration
+- Portfolio Tracking
+- User Authentication
+- Predictive Analytics
+- Machine Learning Based Fund Recommendation
+- Export Reports to PDF
 
 ---
 
 # 👨‍💻 Author
 
-Krishna Dofe
+**Krishna Dofe**
 
-IIT Madras BS Degree in Data Science
+BS Degree in Data Science and Applications
+
+Indian Institute of Technology Madras
+
+GitHub: https://github.com/dofekrishna4-dev
+
+---
+
+# ⭐ If you found this project useful, consider giving it a Star!
