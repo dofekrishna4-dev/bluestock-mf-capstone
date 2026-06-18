@@ -7,7 +7,10 @@ import plotly.graph_objects as go
 # DATABASE
 # ==================================================
 
-DB_PATH = "../data/db/bluestock_mf.db"
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DB_PATH = BASE_DIR / "data" / "db" / "bluestock_mf.db"
 
 
 def get_connection():
@@ -71,7 +74,6 @@ def theme(fig):
         template="plotly_dark",
 
         paper_bgcolor="#0F172A",
-
         plot_bgcolor="#0F172A",
 
         font=dict(
@@ -82,6 +84,8 @@ def theme(fig):
 
         title=dict(
             x=0.5,
+            xanchor="center",
+            y=0.97,
             font=dict(
                 size=24,
                 color="white"
@@ -89,40 +93,42 @@ def theme(fig):
         ),
 
         legend=dict(
-            bgcolor="rgba(0,0,0,0)",
-            font=dict(size=13),
             orientation="h",
             yanchor="bottom",
             y=1.02,
-            xanchor="right",
-            x=1
+            xanchor="center",
+            x=0.5,
+            bgcolor="rgba(0,0,0,0)",
+            title=None,
+            font=dict(size=14)
         ),
 
         margin=dict(
-            l=20,
-            r=20,
-            t=70,
-            b=20
+            l=40,
+            r=40,
+            t=120,
+            b=60
         ),
 
-        height=500,
+        autosize=True,
+        height=650,
 
-        hovermode="x unified"
+        hovermode="closest"
     )
 
     fig.update_xaxes(
         showgrid=False,
-        zeroline=False
+        zeroline=False,
+        automargin=True
     )
 
     fig.update_yaxes(
         gridcolor="rgba(255,255,255,0.08)",
-        zeroline=False
+        zeroline=False,
+        automargin=True
     )
 
     return fig
-
-
 # ==================================================
 # ALERT BOXES
 # ==================================================
